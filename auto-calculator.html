@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расчет стоимости автомобиля</title>
+    <style>
+        form {
+            width: 40%;
+            background: Lavender;
+            padding: 3%;
+        }
+
+        #age {
+            background: rgb(244, 182, 182);
+        }
+
+        /* .electro1 {
+            color: red;
+        } */
+    </style>
+</head>
+
+<body>
+    <form class="form" action="">
+        <h3>Калькулятор расчета стоимости автомобиля</h3>
+
+
+        <div>
+            <legend for="autobrands-list" id="autobrands-list">Бренд авто</legend>
+            <select class="auction" name="autobrand" id="autobrand" onchange="chooseAutobrand()">
+                <option value="default" disabled selected>По умолчанию (1000 $)</option>
+                <option value="700" id="lamborghini" class="lamborghini">Lamborghini Urus</option>
+                <option value="800">Ferrari California</option>
+                <option value="900">Audi R8</option>
+                <option value="1000">Rolls-Royce Wraith</option>
+            </select>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <label for="price">Цена, $ <input type="text" id="priceInput"></label>
+        <br>
+        <br>
+        <div id="service-typeDiv">
+            <legend for="service-type" id="service-type">Тип услуги </legend>
+            <div>
+                <input type="checkbox" class="service-type" id="color" value="50"><label for="color"
+                    id="color1">Покраска</label>
+                <br>
+                <input type="checkbox" class="service-type" id="wash" value="5"><label for="wash">Мойка
+                </label>
+                <br>
+                <input type="checkbox" class="service-type" id="diagnose" value="10"><label
+                    for="diagnose">Диагностика</label>
+                <br>
+                <input type="checkbox" class="service-type" id="wheel" value="20"><label for="wheel">Замена
+                    колеса</label>
+            </div>
+        </div>
+
+        <br>
+        <div>
+            <legend for="fuel-type">Способ приобретения</legend>
+            <div>
+                <input type="radio" name="fuel-type" id="purchase" value="33333"><label for="purchase"
+                    id="purchase1">Покупка
+                </label>
+
+                <br>
+                <input type="radio" name="fuel-type" id="leasing" value="3333"><label for="leasing" id="leasing1">Лизинг
+                    (от 1 мес.)</label>
+
+                <br>
+                <input type="radio" name="fuel-type" id="rent" value="333"><label for="rent" id="rent1">Прокат
+                    (стоимость за сутки)</label>
+            </div>
+        </div>
+
+        <br>
+
+
+        <div>
+            <label for="volume">Объем двигателя, см3 </label>
+            <input type="text" id="volume"></div>
+        <div>
+            <label for="horsepower">Мощность, л.с. </label>
+            <input type="text" id="horsepower"></div>
+
+        <br>
+
+        <div id="age">
+            <legend for="auto-age">Возраст автомобиля </legend>
+
+            <div>
+                <input type="radio" name="auto-age" id="salon" value="80"><label for="salon" id="salon1">Из
+                    салона</label>
+            </div>
+            <div>
+                <input type="radio" name="auto-age" id="used" value="40"><label for="used">Б/у</label>
+            </div>
+
+        </div>
+
+        <br>
+
+        <div id="reciever-div">
+            <legend for="reciever">Получатель </legend>
+            <div>
+                <input type="radio" name="reciever" id="individual" value="50"><label for="individual">Физическое
+                    лицо</label>
+                <br>
+                <input type="radio" name="reciever" id="entity" value="150"><label for="entity" id="entity1">Юридическое
+                    лицо</label>
+            </div>
+        </div>
+        <br>
+        <button type="button" id="calculate" onclick="onSubmit()">Рассчитать</button>
+        <p class="result"> </p>
+
+    </form>
+
+
+
+    <script src="./assets/scripts/auto-calculator.js"></script>
+
+</body>
+
+</html>
