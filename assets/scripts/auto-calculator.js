@@ -1,11 +1,15 @@
-// console.log(priceInput).value;
 let priceInput = document.querySelector("#priceInput");
 let volume = document.querySelector("#volume");
 let horsepower = document.querySelector("#horsepower");
-let checkbox = document.querySelector("#horsepower");
+
+let autobrand = document.getElementById("autobrand");
+
 let newArray = [];
 let serviceprice = 0;
-let result = document.querySelector(".result");
+let terms = 0;
+let age = 0;
+let reciever = 0;
+let totalPrice;
 
 function onSubmit() {
   serviceprice = 0;
@@ -25,17 +29,56 @@ function onSubmit() {
     serviceprice += +document.getElementById("wheel").value;
   }
   if (document.getElementById("purchase").checked) {
-    serviceprice += +document.getElementById("purchase").value;
+    terms += +document.getElementById("purchase").value;
   }
   if (document.getElementById("leasing").checked) {
-    serviceprice += +document.getElementById("leasing").value;
+    terms += +document.getElementById("leasing").value;
   }
   if (document.getElementById("rent").checked) {
-    serviceprice += +document.getElementById("rent").value;
+    terms += +document.getElementById("rent").value;
   }
-  console.log(+priceInput.value + +serviceprice);
+  if (document.getElementById("salon").checked) {
+    age += +document.getElementById("salon").value;
+  }
+  if (document.getElementById("used").checked) {
+    age += +document.getElementById("used").value;
+  }
+  if (document.getElementById("individual").checked) {
+    reciever += +document.getElementById("individual").value;
+  }
+  if (document.getElementById("entity").checked) {
+    reciever += +document.getElementById("entity").value;
+  }
+  totalPrice =
+    +priceInput.value +
+    +serviceprice +
+    +terms +
+    +volume.value +
+    +horsepower.value +
+    +age +
+    +reciever;
+  console.log(
+    +priceInput.value,
+    +serviceprice,
+    +terms,
+    +volume.value,
+    +horsepower.value,
+    +age,
+    +reciever
+  );
+  console.log(totalPrice);
+  document.querySelector(".selectedServices").innerHTML += `Автомобиль: ${
+    autobrand.options[autobrand.selectedIndex].text
+  } <br>
+  Цена: ${priceInput.value}  <br>
+  Тип услуги: ${serviceprice} <br>
+  Способ приобретения: ${terms} <br>
+  Объем двигателя: ${volume.value} <br>
+  Мощность: ${horsepower.value}<br>
+  Возраст автомобиля: ${age}<br>
+  Получатель: ${reciever} <br>`;
   document.querySelector(".result").innerHTML +=
-    "Сумма к оплате: " + Number(+priceInput.value + +serviceprice);
+    "Сумма к оплате: " + Number(totalPrice);
 }
 
 function chooseAutobrand() {
