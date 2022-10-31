@@ -154,18 +154,37 @@ function chooseAutobrand() {
   }
 }
 
-// const form = document.querySelector(".form");
-// const auction = document.querySelector(".auction");
-// const auditionalPrice = {
-//   lamborghini: 80,
-//   ferrari: 100,
-//   audir8: 50,
-//   rolls: 500,
-// };
+///////---------------------ЗАДАНИЕ 3-------------------/////////
 
-// form.onsubmit = (evt) => {
-//   evt.preventDefault();
-//   let total;
-//   const status = auction.value;
-//   console.log(status);
-// };
+//---- 1 ---//
+
+let testArray_1 = ["js", "css", "html"];
+
+console.log(testArray_1[0]); //js
+// alert(testArray_1[0]);
+
+//---- 2 ---//
+
+const testArray_2 = [0, 1, false, 2, undefined, "", 3, null];
+
+const filteredTestArray_2 = testArray_2.filter(Boolean);
+
+// console.log(testArray_2);
+console.log(filteredTestArray_2); //[1, 2, 3]
+// alert(testArray_2);
+// alert(filteredTestArray_2);
+
+//---- 3 ---//
+
+let testArray_3 = [
+  [1, 2],
+  [1, 2, 3],
+  [1, 2, 3, 4],
+];
+
+let filteredTestArray_3 = testArray_3.filter((item) => item.length > 3);
+
+// for (let i = 0; i < testArray_3.length; i++)
+//   if (testArray_3[i].length > 3) console.log(testArray_3[i]);
+
+console.log(filteredTestArray_3);
