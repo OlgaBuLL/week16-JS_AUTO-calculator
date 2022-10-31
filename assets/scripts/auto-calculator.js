@@ -178,9 +178,10 @@ let testArray_3 = [
   [1, 2, 3, 4],
 ];
 
-// let filteredTestArray_3 = testArray_3.filter((item) => item.length > 3);
-
-for (let i = 0; i < testArray_3.length; i++)
-  if (testArray_3[i].length > 3) console.log(testArray_3[i]);
-
-// console.log(filteredTestArray_3);
+for (let i = 0; i < testArray_3.length; i++) {
+  if (testArray_3[i].length > 3) console.log(i);
+  // let innerarray = testArray_3[i];
+  // for (let y = 0; y < innerarray.length; y++) {
+  //   console.log(innerarray[y]);
+  // }
+}
